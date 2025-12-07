@@ -1,65 +1,48 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
-    <title>Carrito Basico</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>E-commerce Simulador</title>
     <link rel="stylesheet" href="./CSS/stylesheet.css">
-    <script defer src="./JavaScript/carrito.js"></script> 
+    <script src="./JavaScript/main.js" defer></script>
+    <script src="./JavaScript/historial.js" defer></script>
 </head>
+
 <body>
+    <header id="header">
+        <h1>E-Commerce Simulador</h1>
+        <button id="btn-ver-carrito">Ver Carrito (0)</button>
+        <a href="./Paginas/historial.html">
+            <button id="btn-ver-historial">Ver historial de compras</button>
+        </a>  
+    </header> 
 
-<header class="header">
-    <h1 id="top-title">E-SHOP</h1>
-    <h3 id="top-subtitle">Para que compres de mentiritas</h3>
-</header>
-
-<main>   
-    <div class="catalogo-productos">
-        
-        <div class="tarjeta-producto">
-            <h3 class="nombre-producto">Buzo Oversize</h3>
-            <img src="./img/buzo.jpg" alt="Imagen de Buzo Oversize" class="imagen-producto">
-            <p class="precio-producto">$45.99</p>
-            <div class="botones ">
-                <button onclick="agregarProducto(1)" class="btn-agregar">➕ Agregar</button>
-                <button onclick="eliminarProducto(1)" class="btn-eliminar">➖ Eliminar</button>
-            </div>
-        </div>
-        
-        <div class="tarjeta-producto">
-            <h3 class="nombre-producto">Remera Algodón</h3>
-            <img src="./img/remera.jpg" alt="Imagen de Remera Algodón" class="imagen-producto">
-            <p class="precio-producto">$15.50</p>
-            <div class="botones">
-                <button onclick="agregarProducto(2)" class="btn-agregar">➕ Agregar</button>
-                <button onclick="eliminarProducto(2)" class="btn-eliminar">➖ Eliminar</button>
-            </div>
+    <main id="productos-contenedor">
+    
+        <div class="tarjeta-producto" id="producto-1">
+            <img src="assets/buzo.jpg" alt="Buzo Oversize">
+            <h3>Buzo Oversize</h3>
+            <p>Precio: $50.000</p>
+            <button class="btn-anadir" data-id="1">Añadir al Carrito</button>
         </div>
 
-        <div class="tarjeta-producto">
-            <h3 class="nombre-producto">Pantalón Chino</h3>
-            <img src="./img/pantalon cargo.jpg" alt="Imagen de Pantalón Cargo" class="imagen-producto">
-            <p class="precio-producto">$59.99</p>
-            <div class="botones">
-                <button onclick="agregarProducto(3)" class="btn-agregar">➕ Agregar</button>
-                <button onclick="eliminarProducto(3)" class="btn-eliminar">➖ Eliminar</button>
-            </div>
+        <div class="tarjeta-producto" id="producto-2">
+            <img src="assets/remera.jpg" alt="Remera Algodón">
+            <h3>Remera Algodon</h3>
+            <p>Precio: $20.000</p>
+            <button class="btn-anadir" data-id="2">Añadir al Carrito</button>
         </div>
 
-    </div>
-</main>
+        <div class="tarjeta-producto" id="producto-3">
+            <img src="assets/pantalon cargo.jpg" alt="Pantalon Cargo">
+            <h3>Pantalon cargo</h3>
+            <p>Precio: $35.000</p>
+            <button class="btn-anadir" data-id="3">Añadir al Carrito</button>
+        </div>
 
-<footer class="resumen-carrito">
-    <div>
-        <h2>Resumen</h2>
-        <p>Productos en el carrito: <span id="lista-carrito">Vacío</span></p>
-        <p><strong>TOTAL:</strong> <span id="total-carrito">$0.00</span></p>
-        
-        <button onclick="alert('Todavia en desarrollo, perdon jeje')" class="btn-ver-carrito">
-            🛒 Ver Carrito
-        </button>
-    </div>
-</footer>
+    </main>
 
 </body>
 </html>

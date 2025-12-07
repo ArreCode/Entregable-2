@@ -1,75 +1,141 @@
-header{
-    background-color: rgb(128, 128, 128);
-    font-size: 2pc;
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-    text-align: center;
-    #top-title{
-        color:white;
-    }
-}
-
-main {
-    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-    background-color: #f4f4f9;
-    padding: 20px;
-}
-
-h2 {
-    text-align: center;
+/* --- 1. Reset Básico y Tipografía General --- */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f9; /* Fondo suave */
     color: #333;
 }
 
-.catalogo-productos{
+header {
+    background-color: #3f51b5; /* Azul primario */
+    color: white;
+    padding: 20px;
     display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-    flex-wrap: wrap;
-    gap: 20px;
-    margin-bottom: 40px;
+    justify-content: space-between; /* Espacia el título y los botones */
+    align-items: center;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin-bottom: 30px;
 }
 
-.tarjeta-producto{
-    background-color: #ffffff;
-    border: 1px solid #ddd;
+header h1 {
+    margin: 0;
+    font-size: 1.8em;
+}
+
+/* --- 2. Estilos Comunes de Botones --- */
+button,
+header a button {
+    background-color: #ff9800; /* Naranja/Ámbar para acción */
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    margin-left: 10px;
+    cursor: pointer;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: background-color 0.3s;
+}
+
+button:hover,
+header a button:hover {
+    background-color: #f57c00; /* Naranja más oscuro al pasar el ratón */
+}
+
+/* --- 3. Contenedor Principal de Productos (Grid) --- */
+#productos-contenedor {
+    display: grid;
+    /* Crea 3 columnas de igual ancho */
+    grid-template-columns: repeat(3, 1fr); 
+    gap: 30px;
+    padding: 0 50px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.tarjeta-producto {
+    background-color: white;
+    padding: 20px;
     border-radius: 8px;
-    padding: 15px;
-    width: 300px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
 
-.imagen-producto{
+/* --- 4. Estilos de la Imagen en la Tarjeta --- */
+.tarjeta-producto img {
     width: 100%;
-    height: auto;
-    max-height: 200px;
-    object-fit: cover;
+    height: 200px; /* Altura fija para uniformidad */
+    object-fit: cover; /* Asegura que la imagen cubra el espacio sin distorsión */
     border-radius: 4px;
+    margin-bottom: 15px;
+}
+
+.tarjeta-producto h3 {
+    color: #3f51b5;
+    margin-top: 0;
     margin-bottom: 10px;
 }
 
-.precio-producto{
-    color:#007bff;
-    font-size: 1.5em;
+.tarjeta-producto p {
+    font-size: 1.1em;
     font-weight: bold;
-    margin: 10px 0;
+    margin-bottom: 10px;
 }
 
-.btn-agregar, .btn-eliminar{
-    padding: 10px 15px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    font-weight: bold;
-    flex-grow: 1;
-    margin:0 5px;
+.tarjeta-producto label {
+    font-size: 0.9em;
+    color: #666;
+    margin-bottom: 20px;
+    display: block; /* Ocupa su propia línea */
 }
 
-.resumen-carrito {
-    max-width: 600px;
-    margin: 0 auto;
+/* --- 5. Estilos Específicos del Historial --- */
+#historial-contenedor {
+    max-width: 800px;
+    margin: 50px auto;
     padding: 20px;
-    background-color: #e9ecef;
-    border-radius: 8px;
-    border: 1px solid #ccc;
+    border-top: 2px solid #ccc;
+}
+
+#historial-contenedor h2 {
+    color: #3f51b5;
     text-align: center;
+    margin-bottom: 20px;
+}
+
+.tarjeta-compra {
+    background-color: white;
+    padding: 15px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    margin-bottom: 15px;
+}
+
+.tarjeta-compra h3 {
+    border-bottom: 1px dashed #ccc;
+    padding-bottom: 5px;
+    margin-bottom: 10px;
+}
+
+.tarjeta-compra ul {
+    list-style-type: none; /* Elimina las viñetas */
+    padding-left: 0;
+}
+
+.tarjeta-compra li {
+    padding: 5px 0;
+    border-left: 3px solid #ff9800; /* Detalle visual */
+    padding-left: 10px;
+    margin-bottom: 5px;
+}
+
+.gasto-total {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #e91e63; /* Color de énfasis */
+    text-align: right;
+    padding-top: 15px;
 }
